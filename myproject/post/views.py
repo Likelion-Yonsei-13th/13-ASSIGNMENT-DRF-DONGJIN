@@ -50,13 +50,13 @@ class CommentViewSet(viewsets.ModelViewSet):
         if post_id:
             return Comment.objects.filter(post_id=post_id)
         return super().get_queryset()
-
+    
     def perform_update(self, serializer):
         comment = self.get_object()
         if comment.user != self.request.user:
             raise PermissionError('본인 댓글만 수정할 수 있습니다.')
-        serializer.save()
-
+            serializer.save()
+        
     def update(self, request, *args, **kwargs):
         comment = self.get_object()
         if comment.user != request.user:

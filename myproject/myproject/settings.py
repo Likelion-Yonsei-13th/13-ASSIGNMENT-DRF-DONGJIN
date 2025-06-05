@@ -51,8 +51,6 @@ INSTALLED_APPS = [
     'post',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
-    'spotify',
-    'drf_yasg',
 ]
 
 
